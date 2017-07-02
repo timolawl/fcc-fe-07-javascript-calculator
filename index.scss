@@ -1,0 +1,97 @@
+$primary-color: #69E3FF;
+$background-color: #F2F2F2;
+$button-color: #FFF;
+$display-color: gray;
+$hover-color: #d9d9d9;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Cookie|Roboto+Mono');
+
+*, :before, :after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: Montserrat;
+  user-select: none;
+}
+
+.background {
+  background-color: $background-color;
+}
+
+.center {
+  height: 100vh;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+ 
+}
+
+.calculator {
+  margin-top: -50%;
+  margin-left: -50%;
+  width: 265px;
+  background-color: $primary-color;
+  border-radius: 10%;
+  padding: 1rem;
+//  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+ //   0 3px 6px rgba(0,0,0,0.23);
+  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.26),
+    0 2px 4px rgba(0,0,0,0.73);
+  
+  
+  &__title {
+    font-family: Cookie;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  &__display {
+    font-family: 'Roboto Mono';
+    text-align: right;
+    font-size: 1.2rem;
+    line-height: 40px;
+    padding: 0 0.25rem;
+    height: 40px;
+    width: 230px;
+    background-color: $display-color;
+    margin: 0.2rem 0;
+  }
+}
+
+[class^='calculator__b'] {
+  border-radius: 10%;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  background-color: $button-color;
+  height: 40px;
+  width: 50px;
+  margin: 0.2rem 0.15rem;
+  cursor: pointer;
+  transform: translate(0, 0);
+  transition: translate 0.25s linear;
+  
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.26),
+    0px 1px 1px rgba(0,0,0,0.73);
+  
+  &:hover {
+    background-color: $hover-color;
+  }
+  
+  &:active {
+    box-shadow: none;
+    transform: translate(0, 5%);
+  }
+}
